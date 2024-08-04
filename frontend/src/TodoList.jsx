@@ -4,6 +4,7 @@ import { useState } from "react"
 const TodoList = () => {
     const [ tasks, setTasks ] = useState([]) // state for list of tasks
     const [ newTask, setNewTask ] = useState("") // state for new task (input value)
+    const [ removeTask, setRemoveTask ] = useState("") // state to remove tasks ?
 
     const addTask = () => {
         // check if input value is empty
@@ -13,6 +14,29 @@ const TodoList = () => {
             // clear the input value field
             setNewTask("")
         }
+    }
+
+    const deleteTask = () => {
+        let startIndex = tasks.length - 1
+        let endIndex = tasks.length
+        
+        for (let task in tasks) {
+            let individualTask = tasks[task]
+            setRemoveTask(tasks.pop(individualTask))
+            // TODO: Fix this function to delete one at a time - Aug 4, 2024
+            
+            
+            // for (let t in individualTask) {
+            //     // each single task split into an array
+            //     let taskSubStr = individualTask[t]
+            //     // convert taskSubStr into array
+            //     let convertedArr = taskSubStr.split("")
+            //     console.log(convertedArr)
+                
+            // }
+        }
+        
+        
     }
 
   return (
@@ -45,7 +69,7 @@ const TodoList = () => {
                 {tasks.map((newTask, index) => 
                 <div className="flex justify-between m-2">
                     <li key={index} className="p-2">{newTask}</li>
-                    <button className="text-lg">X</button>
+                    <button onClick={deleteTask} className="text-lg">X</button>
                 </div>
                 )}
 
