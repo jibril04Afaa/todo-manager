@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/taiba/Desktop/code/projects/todo-manager/backend/TodoApi/TodoApi.csproj": {}
+    "/Users/taiba/Desktop/code/projects/todo-manager/backend/TodoAPI/TodoAPI.csproj": {}
   },
   "projects": {
-    "/Users/taiba/Desktop/code/projects/todo-manager/backend/TodoApi/TodoApi.csproj": {
+    "/Users/taiba/Desktop/code/projects/todo-manager/backend/TodoAPI/TodoAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/taiba/Desktop/code/projects/todo-manager/backend/TodoApi/TodoApi.csproj",
-        "projectName": "TodoApi",
-        "projectPath": "/Users/taiba/Desktop/code/projects/todo-manager/backend/TodoApi/TodoApi.csproj",
+        "projectUniqueName": "/Users/taiba/Desktop/code/projects/todo-manager/backend/TodoAPI/TodoAPI.csproj",
+        "projectName": "TodoAPI",
+        "projectPath": "/Users/taiba/Desktop/code/projects/todo-manager/backend/TodoAPI/TodoAPI.csproj",
         "packagesPath": "/Users/taiba/.nuget/packages/",
-        "outputPath": "/Users/taiba/Desktop/code/projects/todo-manager/backend/TodoApi/obj/",
+        "outputPath": "/Users/taiba/Desktop/code/projects/todo-manager/backend/TodoAPI/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/taiba/.nuget/NuGet/NuGet.Config"
@@ -32,20 +32,27 @@
           "warnAsError": [
             "NU1605"
           ]
-        },
-        "restoreAuditProperties": {
-          "enableAudit": "true",
-          "auditLevel": "low",
-          "auditMode": "direct"
         }
       },
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
-            "Microsoft.EntityFrameworkCore.InMemory": {
+            "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[8.0.7, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "target": "Package",
+              "version": "[8.0.7, )"
+            },
+            "MicrosoftEntityFramework": {
+              "target": "Package",
+              "version": "[1.0.0, )"
+            },
+            "Npgsql.EntityFrameworkCore.PostgreSQL": {
+              "target": "Package",
+              "version": "[8.0.4, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
