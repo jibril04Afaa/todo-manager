@@ -1,9 +1,30 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { v4 as uuidv4 } from 'uuid'
 
 const TodoList = () => {
     const [newTask, setNewTask] = useState(""); // state for input value
     const [taskList, setTaskList] = useState([]); // state for task array/list 
+
+    useEffect(() => {
+        const fetchFromApi = async() => {
+
+            try {
+                const response = await fetch("http://localhost:5033/api/TodoItem")
+                
+                if (!response.ok) {
+                    throw new Error("Network response was not ok")
+                }
+
+                const parsedResponse = await response.json()
+                console.log(parsedResponse)
+            } catch (error) {
+                console.error(error)
+            }
+            
+        }
+    
+        fetchFromApi()
+    }, [])
 
     const addTask = () => {
         // check if input value is empty
@@ -22,11 +43,7 @@ const TodoList = () => {
         setTaskList(updatedTasks);
     }
 
-    const fetchFromApi = async() => {
-        const response = await fetch("http://localhost:5033/swagger/index.html")
-        const parsedResponse = response.json()
-        
-    }
+
 
     return (
         <>
@@ -63,7 +80,6 @@ const TodoList = () => {
                 </ul>
             </div>
 
-            fetchFromApi()
         </>
     );
 }
